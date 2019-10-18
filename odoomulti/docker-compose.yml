@@ -14,19 +14,19 @@ services:
     image: nginx:latest
     tty: true
     ports:
-      - 8081:8081
+      - 8081:80
     links:
       - odoo1
       - odoo2
   odoo1:
-    build: ./odoo
+    image: odoo:latest
     tty: true
     volumes:
       - odoo-data:/var/lib/odoo
     ports:
       - 8069:8069
   odoo2:
-    build: ./odoo
+    image: odoo:latest
     tty: true
     volumes:
       - odoo-data:/var/lib/odoo
